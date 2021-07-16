@@ -1,4 +1,4 @@
-//Analysis using prostate dataset
+//Analysis using prostate dataset available at https://hbiostat.org/data/ 
 //Kaplan-Meier for all-cause failure by treatment group (Figure 1 in the paper)
 
 // first need to set working directory
