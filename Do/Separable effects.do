@@ -1,6 +1,5 @@
 //Analysis using prostate cancer dataset available at https://hbiostat.org/data/ 
-//Separable effects are estimated: 1. direct separable effect
-//                                 2. indirect separable effect
+//Separable effects are estimated.
 
 
 /* 
