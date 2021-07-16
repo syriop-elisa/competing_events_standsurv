@@ -119,9 +119,7 @@ twoway  (rarea CIF0_other_lci CIF0_other_uci timevar, color("200 82 0 %20")) ///
 				 graphregion(color(white)) ///
 				 plotregion(margin(b=0 r=0 l=0)) 
                  
- graph combine prostate other, nocopies ycommon graphregion(color(white)) name(cif, replace)
- 
- graph export Total_Crude.pdf, replace
+
  
 // plotting their difference
 // for prostate cancer
@@ -146,12 +144,11 @@ twoway  (rarea CIF_diff_other_lci CIF_diff_other_uci timevar, color(black%15) lp
 				 graphregion(color(white)) ///
 				 plotregion(margin(b=0 r=0 l=0)) 
                  
- graph combine prostate_dif other_dif, nocopies ycommon graphregion(color(white)) name(dif_cif, replace)
- graph export Total_Crude_diff.pdf, replace
+
  
  //Combined (Figure 2 in the paper)
  graph combine prostate other prostate_dif other_dif, nocopies graphregion(color(white)) cols(2)
- graph export Total_Crude_comb.pdf, replace
+ graph export Total_comb.pdf, replace
 
  
  
