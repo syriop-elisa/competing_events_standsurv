@@ -51,6 +51,7 @@ stpm2 normalAct ageCat2 ageCat3 hx hgBinary rx, scale(hazard) df(4) tvc(rx) dftv
 estimates store prostate
 
 // obtain the standardised net probability of prostate cancer death under placebo and under DES as well as their difference
+// with standsurv use option failure
 standsurv, failure at1(rx 0) at2(rx 1) timevar(timevar) contrast(difference) ci ///
 	atvars(F_net_prostate0 F_net_prostate1) contrastvars(F_net_prostate_diff)
 
