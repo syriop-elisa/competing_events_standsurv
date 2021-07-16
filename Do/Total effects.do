@@ -186,6 +186,7 @@ list t_rmft60 RMFT_diff_other* in 1, noobs abb(22)
 // similarly the following two # in lincom() correspond to at2() i.e. under DES and in specific the standardised months lost due to prostate cancer and the standardised months lost due to other causes
 
 // total months lost (from both prostate and other causes) under placebo, by setting the first two # in lincom() to 1 and the following two in 0
+// with standsurv use options rmft and cif and crmodels()
 standsurv, crmodels(prostate other) cif rmft  ///
     at1(rx 0) at2(rx 1) timevar(t_rmft60) lincom(1 1 0 0) ci ///
     atvar(RMLT0b RMLT1b) lincomvar(RMLT_total0)
