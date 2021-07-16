@@ -46,7 +46,7 @@ range timevar 0 60 121
 
 
 //****************   Total effects - 1. Cause specific cumulative incidence functions ****************//
-// fit cause specific models (exit at 60)
+// fit cause specific models (exit at 60 months)
 // for prostate 
 stset dtime, failure(eventType==1) exit(time 60)
 stpm2 rx normalAct ageCat2 ageCat3 hx hgBinary, scale(hazard) df(4) tvc(rx) dftvc(2) eform
@@ -83,7 +83,7 @@ standsurv, crmodels(prostate other) cif at1(rx 0) at2(rx 1) timevar(timevar) ///
 // list results at 60 months
 // for the CIF from death due to prostate cancer under placebo and under DES with confidence intervals (CIs)
 list CIF0_prostate* CIF1_prostate* if timevar==60, noobs abbrev(25)
-// for the CIF from death due to other causes under placebo and under DES with confidence intervals (CIs)
+// for the CIF from death due to other causes under placebo and under DES with CIs
 list CIF0_other* CIF1_other* if timevar==60, noobs abbrev(25)
 // for the differences between treatment arms
 list CIF_diff_prostate* if timevar==60, noobs abbrev(25)
