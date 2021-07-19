@@ -143,11 +143,11 @@ twoway  (rarea CIF0c_prostate_lci CIF0c_prostate_uci timevar, color("200 82 0 %2
 // Non-marginalised estimates can be obtained by specifying the entire covariate pattern so that the predictions are not averaged over any covariate distribution.
 // For instance age-specific predictions, can be derived by calculating the spline variables at that particular age with the same knot locations and projection matrix as before
 // An example is given below when interest is CIFs and we focus on individuals with normal daily activity (normalAct=1), no history of cardiovascular disease (hx=0) 
-// and hemoglobin level lower than 12 (g/100ml) (hgBinary=1) and compare CIFs under DES  and under placebo for ages 60, 75 and 80 years old
+// and hemoglobin level lower than 12 (g/100ml) (hgBinary=1) and compare CIFs under DES  and under placebo for ages 55, 65 and 75 years old
 // Below, the spline variables for specific ages are stored in the local macros c1, c2 and c3. 
 				 
 				 
-foreach age in 60 75 80 {
+foreach age in 55 65 75 {
 
     rcsgen, scalar(`age') knots($ageknots) rmatrix(Rage) gen(c)
     
@@ -167,21 +167,20 @@ foreach age in 60 75 80 {
 
 
 // plot age-specific CIF under placebo and under DES
-foreach age in  75 80  {
+foreach age in  55 65  {
 twoway	(rarea CIF0`age'_prostate_lci CIF0`age'_prostate_uci timevar, color("200 82 0 %20")) ///
 	(rarea CIF1`age'_prostate_lci CIF1`age'_prostate_uci timevar, color(black%15)) ///
 	(line CIF0`age'_prostate CIF1`age'_prostate timevar , color("200 82 0" black)) ///
 		, xtitle("Months", size(medlarge)) ///
 		ytitle("Cumulative incidence", size(medlarge)) ///
 		ylabel(0.0(0.2)1, angle(h) format(%3.1f)) ///
-		yscale(range(0.0 1.2)) ///
 		legend(off)   ///
 		title("`age' years old", color(black)) ///
 		name(CIF_`age', replace) ///
 		graphregion(color(white)) ///
 		plotregion(margin(b=0 r=0 l=0)) 
 }
-foreach age in 60 {
+foreach age in 75 {
 twoway	(rarea CIF0`age'_prostate_lci CIF0`age'_prostate_uci timevar, color("200 82 0 %20")) ///
 	(rarea CIF1`age'_prostate_lci CIF1`age'_prostate_uci timevar, color(black%15)) ///
 	(line CIF0`age'_prostate CIF1`age'_prostate timevar , color("200 82 0" black)) ///
@@ -191,7 +190,6 @@ twoway	(rarea CIF0`age'_prostate_lci CIF0`age'_prostate_uci timevar, color("200 
 		title("`age' years old", color(black)) ///
 		name(CIF_`age', replace) ///
 		ylabel(0.0(0.2)1, angle(h) format(%3.1f)) ///
-		yscale(range(0.0 1.2)) ///
 		graphregion(color(white)) ///
 		plotregion(margin(b=0 r=0 l=0))  
 }
@@ -199,7 +197,7 @@ twoway	(rarea CIF0`age'_prostate_lci CIF0`age'_prostate_uci timevar, color("200 
 
 
 // plot their difference
-foreach age in 60 {
+foreach age in 75 {
 twoway	(rarea CIF_diff`age'_prostate_lci CIF_diff`age'_prostate_uci timevar, color(black%15) lpattern(dash dash)) ///
 	(line CIF_diff`age'_prostate timevar , color(black) lpattern(dash)) ///
 		, xtitle("Months", size(medlarge)) ///
@@ -212,7 +210,7 @@ twoway	(rarea CIF_diff`age'_prostate_lci CIF_diff`age'_prostate_uci timevar, col
 		plotregion(margin(b=0 r=0 l=0))  
 }
 
-foreach age in 75  80 {
+foreach age in 55 65 {
 twoway	(rarea CIF_diff`age'_prostate_lci CIF_diff`age'_prostate_uci timevar, color(black%15) lpattern(dash dash)) ///
 	(line CIF_diff`age'_prostate timevar , color(black) lpattern(dash)) ///
 		, xtitle("Months", size(medlarge)) ///
@@ -228,7 +226,7 @@ twoway	(rarea CIF_diff`age'_prostate_lci CIF_diff`age'_prostate_uci timevar, col
 }
 
 //figure 6
-graph combine CIF_60 CIF_75 CIF_80 CIF_60_dif CIF_75_dif CIF_80_dif, graphregion(color(white)) plotregion(margin(b=0 r=0 l=0)) cols(3)  commonscheme
+graph combine CIF_55 CIF_65 CIF_75 CIF_55_dif CIF_65_dif CIF_75_dif, graphregion(color(white)) plotregion(margin(b=0 r=0 l=0)) cols(3)  commonscheme
 graph export CIF_agespec.pdf, replace
 
 
