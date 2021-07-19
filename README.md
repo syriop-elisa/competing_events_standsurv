@@ -26,11 +26,13 @@ To generate the restricted cubic spline functions
 
 `net from https://www.pclambert.net/downloads/standsurv`
 
-Files of Stata code for obtaining several estimates of interest are available in folder [`Do`]():
+Files of Stata code for obtaining several estimates of interest are available in folder [`Do`](https://github.com/syriop-elisa/competing_events_standsurv/Do):
 
-* [`Kaplan Meier.do`](): produces the Kaplan-Meier for all-cause failure by treatment group (Figure 1 in the paper)
-* [`Total effects.do`](): shows how to obtain total effects (i.e. cause specific cumulative incidence functions 
+* [`Kaplan_Meier.do`](https://github.com/syriop-elisa/competing_events_standsurv/Do/Kaplan_Meier.do): produces the Kaplan-Meier for all-cause failure by treatment group (Figure 1 in the paper)
+* [`Total_effects.do`](https://github.com/syriop-elisa/competing_events_standsurv/Do/Total_effects.do): shows how to obtain total effects (i.e. cause specific cumulative incidence functions 
 and expected loss in life due to a cause of death before time t*)
-* [`Direct effects.do`](): shows how to obtain direct effects (i.e. net probability of death)
-* [`Separable effects.do`](): shows how to obtain separable effects 
-* [`Advanced modelling details.do`](): described how to obtain estimates after fitting complex models e.g. with interactions, non-linear effects as well as how to obtain non-marginalised estimates and other contrasts e.g. ratio.
+* [`Direct_effects.do`](https://github.com/syriop-elisa/competing_events_standsurv/Do/Direct_effects.do): shows how to obtain direct effects (i.e. net probability of death)
+* [`Separable_effects.do`](https://github.com/syriop-elisa/competing_events_standsurv/Do/Separable_effects.do): shows how to obtain separable effects 
+* [`Advanced_modelling_details.do`](https://github.com/syriop-elisa/competing_events_standsurv/Do/Advanced_modelling_details.do): described how to obtain estimates after fitting complex models e.g. with interactions, non-linear effects as well as how to obtain non-marginalised estimates and other contrasts e.g. ratio.
+
+Folder [`Plots`](https://github.com/syriop-elisa/competing_events_standsurv/Plots) includes pdf files with the plots created (and are also included in the paper).
