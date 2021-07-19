@@ -233,7 +233,7 @@ graph export CIF_agespec.pdf, replace
 
 //************** 4. FORMING OTHER CONTRASTS  **************//  
 // Instead of the difference, the ratio can also be calculated with the option contrast(ratio). 
-// For instance, the ratio in standardised CIFs under DES and under placebo can be obtained by specifying conmtrast(ratio) within standsurv.
+// For instance, the ratio in standardised CIFs under DES and under placebo can be obtained by specifying contrast(ratio) within standsurv.
 standsurv, crmodels(prostate other) cif timevar(timevar) contrast(ratio) ci ///
     at1(rx 0 agercs1rx 0 agercs2rx 0 agercs3rx 0)  ///
     at2(rx 1 agercs1rx=agercs1 agercs2rx=agercs2 agercs3rx=agercs3)  ///
