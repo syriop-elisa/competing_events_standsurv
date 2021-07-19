@@ -9,7 +9,7 @@ Confidence intervals can also be derived using the delta method.
 Causal effects can be defined as the total effect of treatment through all causal pathways between treatment and the event of interest (i.e. cumulative incidence and expected loss in life due to a specific cause of death) as well as the directs effect of treatment on the event of interest that does not capture the effect of treatment on the competing event (i.e. net probability of death). 
 For settings where the  treatment effect can be decomposed into distinct components, separable effects have also been defined, with the separable indirect effect of treatment corresponding to the treatment effect on the event of interest only through its effect on the competing event.
 We demonstrate how to obtain estimates for all statistical estimands of interest and the causal effects using an example of publicly available prostate cancer data.
-Data include 502 individuals that were randomly assigned estrogen therapy and are available at [`http://biostat.mc.vanderbilt.edu/DataSets`](http://biostat.mc.vanderbilt.edu/DataSets).
+Data include 502 individuals that were randomly assigned estrogen therapy and are available at [https://hbiostat.org/data/`](https://hbiostat.org/data/).
 
 
 For the analysis, we use some user-written Stata commands.
