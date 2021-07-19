@@ -27,7 +27,7 @@ label values eventType causelab
 
 
 // declare survival data for all-cause deaths
-stset dtime, failure(eventType==1,2) exit(time 60)
+stset dtime, failure(allcause==1) exit(time 60)
 
 // Kaplan-Meier failure curve for DES and placebo
 sts graph, by(rx) failure  ///
