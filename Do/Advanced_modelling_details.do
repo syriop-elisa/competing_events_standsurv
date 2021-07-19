@@ -173,7 +173,7 @@ twoway	(rarea CIF0`age'_prostate_lci CIF0`age'_prostate_uci timevar, color("200 
 	(line CIF0`age'_prostate CIF1`age'_prostate timevar , color("200 82 0" black)) ///
 		, xtitle("Months", size(medlarge)) ///
 		ytitle("Cumulative incidence", size(medlarge)) ///
-		ylabel(0.0(0.2)1.2, angle(h) format(%3.1f)) ///
+		ylabel(0.0(0.2)1, angle(h) format(%3.1f)) ///
 		legend(off)   ///
 		title("`age' years old", color(black)) ///
 		name(CIF_`age', replace) ///
@@ -189,7 +189,7 @@ twoway	(rarea CIF0`age'_prostate_lci CIF0`age'_prostate_uci timevar, color("200 
 		legend(order(3 "Placebo" 4 "DES") pos(10) ring(0) cols(1) size(medium) region(lwidth(none)))   ///
 		title("`age' years old", color(black)) ///
 		name(CIF_`age', replace) ///
-		ylabel(0.0(0.2)1.2, angle(h) format(%3.1f)) ///
+		ylabel(0.0(0.2)1, angle(h) format(%3.1f)) ///
 		graphregion(color(white)) ///
 		plotregion(margin(b=0 r=0 l=0))  
 }
